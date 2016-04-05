@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block header %}UT Austin Housing Explorer{% endblock %}`
+{% block content %}
+<div class="row">
+	<div class="col-md-8 col-sm-8 map-container">
+        <div id="map"></div>
+            <script>
+                //API key
+                mapboxgl.accessToken="pk.eyJ1Ijoic2NpZiIsImEiOiJjaWgyOHJkZW8weHJrd3dtMHJ1cnV0ZDY2In0.5wK8t52sB90Exoi6StYlBw";
+                //Initialize map instance
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    center: [-98, 29],
+                    zoom: 12,
+                    style: 'mapbox://styles/scif/cim458kaf00fr9jkpn062pljc',
+                    hash: true
+                });
+                map.fitBounds([[
+                    -97.72,
+                    30.28
+                ], [
+                    -97.750000,
+                    30.290
+                ]]);
+            </script>
+        </div>
+		<div class="col-md-4 col-sm-4 selected">
+		<h2>UT-Austin Housing Explorer</h2>
+		<p>Created by Junyuan Tan and Adam Humphrey</p>
+        <p class="calltoaction">Select a dormitory from the map to get started, or choose one from the list below:</p>
+        <ul class="init-list">
+            <a href="/dorms/andrews">
+                <li class="list-item">Andrews</li>
+            </a>
+            <a href="/dorms/blanton">
+                <li class="list-item">Blanton</li>
+            </a>
+            <a href="/dorms/brackenridge">
+                <li class="list-item">Brackenridge</li>
+            </a>
+            <a href="/dorms/carothers">
+                <li class="list-item">Carothers</li>
+            </a>
+            <a href="/dorms/creekside">
+                <li class="list-item">Creekside</li>
+            </a>
+            <a href="/dorms/duren">
+                <li class="list-item">Duren</li>
+            </a>
+            <a href="/dorms/jeast">
+                <li class="list-item">Jester East</li>
+            </a>
+            <a href="/dorms/jwest">
+                <li class="list-item">Jester West</li>
+            </a>
+            <a href="/dorms/kinsolving">
+                <li class="list-item">Kinsolving</li>
+            </a>
+            <a href="/dorms/littlefield">
+                <li class="list-item">Littlefield</li>
+            </a>
+            <a href="/dorms/moorehill">
+                <li class="list-item">Moore-Hill</li>
+            </a>
+            <a href="/dorms/prather">
+                <li class="list-item">Prather</li>
+            </a>
+            <a href="/dorms/roberts">
+                <li class="list-item">Roberts</li>
+            </a>
+            <a href="/dorms/sanjac">
+                <li class="list-item">San Jacinto</li>
+            </a>
+            <a href="/dorms/whitis">
+                <li class="list-item">Whitis Court</li>
+            </a>
+        </ul>
+	</div>
+</div>
+{% endblock %}
